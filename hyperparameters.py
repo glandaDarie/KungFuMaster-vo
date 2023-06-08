@@ -1,0 +1,2 @@
+NUMBER_EPISODES : int = 5
+MAX_STEPS : int = 1000
