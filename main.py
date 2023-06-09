@@ -15,7 +15,6 @@ def main() -> None:
             environment.render()
 
             action = np.random.randint(num_actions) 
-            # print(f"action choosen: {action}")
             next_state, reward, _, done, info = environment.step(action)  
 
             if done:
