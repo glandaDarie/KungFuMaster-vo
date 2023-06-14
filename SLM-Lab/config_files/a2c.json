@@ -79,7 +79,7 @@
         "max_trial": 1
       }
     },
-    "a2c_KungFuMaster": {
+    "a2c_KungFuMaster_": {
       "agent": [{
         "name": "A2C",
         "algorithm": {

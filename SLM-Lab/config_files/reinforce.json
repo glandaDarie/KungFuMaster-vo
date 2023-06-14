@@ -54,7 +54,11 @@
     "env": [{
       "name": "KungFuMaster-v0",
       "max_t": null,
-      "max_frame": 1000000
+      "frame_op": "concat",
+      "reward_scale": "sign",
+      "frame_op_len": 4,
+      "num_envs": 16,
+      "max_frame": 750000
     }],
     "body": {
       "product": "outer",
@@ -66,8 +70,8 @@
       "max_session": 1,
       "max_trial": 1,
       "score_logging": false,
-      "eval_frequency": 50,
-      "log_frequency": 50
+      "eval_frequency": 100000,
+      "log_frequency": 100000
     }
   }
 }
