@@ -15,8 +15,8 @@
         },
         "gamma": 0.99,
         "training_batch_iter": 1,
-        "training_iter": 4,
-        "training_frequency": 4,
+        "training_iter": 1,
+        "training_frequency": 32,
         "training_start_step": 10000
       },
       "memory": {
@@ -34,17 +34,17 @@
           [64, 4, 2, 0, 1],
           [32, 3, 1, 0, 1]
         ],
-        "fc_hid_layers": [256],
+        "fc_hid_layers": [512],
         "hid_layers_activation": "relu",
-        "init_fn": null,
+        "init_fn": "orthogonal_",
         "batch_norm": false,
         "clip_grad_val": 10.0,
         "loss_spec": {
           "name": "MSELoss"
         },
         "optim_spec": {
-          "name": "Adam",
-          "lr": 2.5e-5
+          "name": "RMSprop",
+          "lr": 0.0001
         },
         "lr_scheduler_spec": null,
         "update_type": "replace",
@@ -70,7 +70,7 @@
       "eval_frequency": 10000,
       "log_frequency": 10000,
       "rigorous_eval": 0,
-      "max_session": 4,
+      "max_session": 1,
       "max_trial": 1
     }
   }

@@ -16,7 +16,7 @@
         "gamma": 0.99,
         "training_batch_iter": 1,
         "training_iter": 1,
-        "training_frequency": 1,
+        "training_frequency": 32,
         "training_start_step": 10000
       },
       "memory": {
@@ -30,18 +30,19 @@
         "conv_hid_layers": [
           [32, 8, 4, 0, 1],
           [64, 4, 2, 0, 1],
-          [64, 3, 1, 0, 1]
+          [32, 3, 1, 0, 1]
         ],
         "fc_hid_layers": [512],
         "hid_layers_activation": "relu",
-        "init_fn": null,
+        "init_fn": "orthogonal_",
+        "normalize": true,
         "batch_norm": false,
         "clip_grad_val": 10.0,
         "loss_spec": {
           "name": "SmoothL1Loss"
         },
         "optim_spec": {
-          "name": "Adam",
+          "name": "RMSprop",
           "lr": 0.0001
         },
         "lr_scheduler_spec": null,
@@ -65,11 +66,11 @@
     },
     "meta": {
       "distributed": false,
+      "eval_frequency": 10000,
+      "log_frequency": 10000,
       "rigorous_eval": 0,
       "max_session": 1,
-      "max_trial": 1,
-      "eval_frequency": 10000,
-      "log_frequency": 10000
+      "max_trial": 1
     }
   }
 }
