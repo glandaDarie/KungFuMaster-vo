@@ -41,13 +41,10 @@
           "name": "MSELoss"
         },
         "optim_spec": {
-          "name": "Adam",
+          "name": "RMSprop",
           "lr": 0.01
         },
-        "update_type": "polyak",
         "lr_scheduler_spec": null,
-        "update_frequency": 1,
-        "update_coef": 0.1,
         "gpu": true
       }
     }],
@@ -66,12 +63,11 @@
     },
     "meta": {
       "distributed": false,
+      "eval_frequency": 10000,
+      "log_frequency": 10000,
       "rigorous_eval": 0,
       "max_session": 1,
-      "max_trial": 1,
-      "score_logging": false,
-      "eval_frequency": 100000,
-      "log_frequency": 100000
+      "max_trial": 1   
     }
   }
 }
