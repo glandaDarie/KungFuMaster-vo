@@ -16,26 +16,24 @@
           "start_step": 0,
           "end_step": 20000
         },
-        "training_frequency": 1,
-        "training_batch_iter": 4
+        "training_frequency": 32
       },
       "memory": {
-        "name": "OnPolicyReplay",
-        "batch_size": 64
+        "name": "OnPolicyReplay"
       },
       "net": {
         "type": "ConvNet",
         "shared": false,
          "conv_hid_layers": [
-     	    [64, 8, 4, 0, 1],
-          [128, 4, 2, 0, 1],
+     	    [32, 8, 4, 0, 1],
+          [64, 4, 2, 0, 1],
           [32, 3, 1, 0, 1]
         ],
         "fc_hid_layers": [256],
         "hid_layers_activation": "relu",
         "normalize": true,
-        "batch_norm": true,
-        "init_fn": "xavier_uniform_",
+        "batch_norm": false,
+        "init_fn": "orthogonal_",
         "clip_grad_val": 0.5,
         "loss_spec": {
           "name": "MSELoss"
